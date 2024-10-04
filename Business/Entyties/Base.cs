@@ -8,13 +8,13 @@ namespace Business.Entyties
 {
     public class Base
     {
-        public Base(int id, string name)
+        public Base(long id, string name)
         {
             Id = id;
             Name = name;
         }
 
-        private int Id {  get; set; }
-        private string Name {  get; set; }
+        public long Id {  get; set; }
+        public string Name {  get; set; }
     }
 }

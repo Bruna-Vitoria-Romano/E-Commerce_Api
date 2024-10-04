@@ -8,7 +8,7 @@ namespace Business.Entyties
 {
     public class Product : Base
     {
-        public Product(string description, Enum status, int id, string name) : base(id, name)
+        public Product(string description, Enum status, long id, string name) : base(id, name)
         {
             Description = description;
             Status = status;

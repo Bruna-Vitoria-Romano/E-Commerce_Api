@@ -1,13 +1,15 @@
 ﻿
+using Business.Entyties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Repository.Interfaces
+namespace Data.Repository.Interfaces
 {
-    internal interface IProductRepository
+    public interface IProductRepository : IGenericInterface<Product>
     {
+        Task<Product> GetById(long id);
     }
 }

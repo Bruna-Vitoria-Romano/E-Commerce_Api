@@ -8,7 +8,7 @@ namespace Business.Entyties
 {
     public class User : Base
     {
-        public User(string phone, string email, string password, int id, string name) : base(id, name)
+        public User(string phone, string email, string password, long id, string name) : base(id, name)
         {
             Phone = phone;
             Email = email;

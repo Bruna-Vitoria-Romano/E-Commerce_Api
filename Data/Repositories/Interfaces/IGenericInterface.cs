@@ -1,17 +1,22 @@
-﻿using System;
+﻿using Business.Entyties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Repository.Interfaces
+namespace Data.Repository.Interfaces
 {
-    internal interface IGenericInterface<T> where T : class
+    public interface IGenericInterface<T> where T : Base
     {
-        Task<T> GetByIdAsync<T>(int id);
-        Task<List<T>> GetAllAsync<T>();
-        Task<T> CreateAsync<T>(T entity);
-        Task<T> UpdateAsync<T>(int id, T entity);
-        Task<T> DeleteAsync<T>(int id);
+        Task<T> Create(T obj);
+
+        Task<T> Update(T obj);
+
+        Task<T> Remove(long Id);
+
+        Task<T> Get(long Id);
+
+        Task<List<T>> Get();
     }
 }

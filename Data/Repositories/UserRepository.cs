@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Business.Entyties;
+using Data.Repository.Interfaces;
+using Data.DataContext;
+using Data.Repositories;
+using Microsoft.EntityFrameworkCore;
 
-namespace Business.Repository
+namespace Data.Repositories
 {
-    internal class UserRepository
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
+        private readonly Context _context;
+
+        public UserRepository(Context context) : base(context)
+        {
+            _context = context;
+        }
+
+        public async Task<User> GetByName(string Name)
+        {
+            var user = await _context.Users.Where(x => x.Name.ToLower() == Name.ToLower()).AsNoTracking().ToListAsync();
+
+            return user.FirstOrDefault();
+        }
     }
 }
