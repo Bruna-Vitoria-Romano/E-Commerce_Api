@@ -1,0 +1,5 @@
+C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.sourcelink.json
