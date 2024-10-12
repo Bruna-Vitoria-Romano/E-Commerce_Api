@@ -8,14 +8,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Core.DTO;
+using AutoMapper;
 
 namespace Data.Repositories
 {
-    public class ProductRepository : BaseRepository<Product>, IProductRepository
+    public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
         private readonly Context _context;
 
-        public ProductRepository(Context context) : base(context)
+        public ProductRepository(Context context, IMapper mapper) : base(context)
         {
             _context = context;
         }

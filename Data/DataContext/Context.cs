@@ -1,5 +1,8 @@
 ﻿using Business.Entyties;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.SqlServer;
 using System.Reflection;
 
 namespace Data.DataContext

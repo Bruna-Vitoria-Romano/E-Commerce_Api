@@ -1,4 +1,5 @@
 ﻿
+using Business.Core.DTO;
 using Business.Entyties;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Data.Repository.Interfaces
 {
-    public interface IProductRepository : IGenericInterface<Product>
+    public interface IProductRepository : IGenericRepository<Product>
     {
         Task<Product> GetById(long id);
     }

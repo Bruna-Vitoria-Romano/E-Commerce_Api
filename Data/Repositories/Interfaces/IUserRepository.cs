@@ -1,4 +1,5 @@
-﻿using Business.Entyties;
+﻿using Business.Core.DTO;
+using Business.Entyties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data.Repository.Interfaces
 {
-    public interface IUserRepository : IGenericInterface<User>
+    public interface IUserRepository : IGenericRepository<User>
     {
         Task<User> GetByName(string Name);
     }
