@@ -16,3 +16,7 @@ and the connection string for my database.
 
 #### TO-DO:
 - fix the bugs
+- UPDATE: I fixed the bugs I had in my project, I could start coding the controllers and I had more bugs, but I could manage it. Now I going do the tests for the controllers.
+
+- ### TO-DO:
+- Controller
