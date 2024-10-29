@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace Data.Repository.Interfaces
 {
-    public interface IProductRepository : IGenericRepository<Product>
+    public interface IProductRepository
     {
-        Task<Product> GetById(long id);
+
     }
 }

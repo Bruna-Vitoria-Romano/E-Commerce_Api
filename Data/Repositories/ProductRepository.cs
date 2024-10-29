@@ -13,20 +13,11 @@ using AutoMapper;
 
 namespace Data.Repositories
 {
-    public class ProductRepository : GenericRepository<Product>, IProductRepository
+    public class ProductRepository : GenericRepository<ProductDTO>, IProductRepository
     {
-        private readonly Context _context;
-
-        public ProductRepository(Context context, IMapper mapper) : base(context)
+        public ProductRepository(Context context, DbSet<ProductDTO> dbSet) : base(context, dbSet)
         {
-            _context = context;
-        }
 
-        public async Task<Product> GetById(long id)
-        {
-            var product = await _context.Products.Where(y => y.Id == id).AsNoTracking().FirstOrDefaultAsync();
-
-            return product;
         }
     }
 }

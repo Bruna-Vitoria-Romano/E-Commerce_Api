@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Data.Repository.Interfaces
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IUserRepository
     {
-        Task<User> GetByName(string Name);
+
     }
 }

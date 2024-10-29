@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Business.Core.DTO;
 using Business.Entyties;
 using Data.DataContext;
 using Data.Repository.Interfaces;
@@ -12,54 +13,51 @@ using System.Threading.Tasks;
 
 namespace Data.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : Base
+    public class GenericRepository<T> where T : class
     {
         private readonly Context _context;
+        private readonly DbSet<T> _dbSet;
 
-        public GenericRepository(Context context)
+        public GenericRepository(Context context, DbSet<T> dbSet)
         {
             _context = context;
+            _dbSet = dbSet;
         }
 
-        public async Task<T> Create(T obj)
+        public async Task AddAsync(T entity)
         {
-            _context.Add(obj);
+            var addEntity = await _dbSet.AddAsync(entity);
             await _context.SaveChangesAsync();
-
-            return obj;
         }
 
-        public async Task<T> Get(long Id)
+        public async Task DeleteByIdAsync(object id)
         {
-            var obj = await _context.Set<T>().AsNoTracking().Where(x => x.Id == Id).ToListAsync();
+            if (id == null) { throw new Exception("Id cannot be null"); }
 
-            return obj.FirstOrDefault();
-        }
-
-        public async Task<List<T>> GetAll()
-        {
-            return await _context.Set<T>().AsNoTracking().ToListAsync();
-        }
-
-        public async Task<T> Remove(long Id)
-        {
-            var obj = await Get(Id);
-
-            if (obj != null)
-            {
-                _context.Remove(obj);
-                await _context.SaveChangesAsync();
-            }
-
-            return obj;
-        }
-
-        public async Task<T> Update(T obj)
-        {
-            _context.Entry(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var deleteEntity = await _dbSet.FindAsync(id);
+            _dbSet.Remove(deleteEntity);
             await _context.SaveChangesAsync();
+        }
 
-            return obj;
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            return await _dbSet.ToListAsync();
+        }
+
+        public async Task<T> GetByIdAsync(object id)
+        {
+            if (id == null) { throw new Exception("Id cannot be null"); }
+
+            return await _dbSet.FindAsync(id);
+        }
+
+        public async Task UpdateAsync(T entity)
+        {
+            if (entity == null) { throw new Exception("Entity not found"); }
+
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
     }
 }

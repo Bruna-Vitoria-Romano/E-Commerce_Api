@@ -8,22 +8,11 @@ using Business.Core.AutoMapper;
 
 namespace Data.Repositories
 {
-    public class UserRepository : GenericRepository<User>, IUserRepository
+    public class UserRepository : GenericRepository<UserDTO>, IUserRepository
     {
-        private readonly Context _context;
-        private readonly AutoMapperProfile _mapper;
-
-        public UserRepository(Context context, AutoMapperProfile mapper) : base(context)
+        public UserRepository(Context context, DbSet<UserDTO> dbSet) : base(context, dbSet)
         {
-            _context = context;
-            _mapper = mapper;
-        }
 
-        public async Task<User> GetByName(string Name)
-        {
-            var user = await _context.Users.Where(x => x.Name.ToLower() == Name.ToLower()).AsNoTracking().ToListAsync();
-
-            return user.FirstOrDefault();
         }
     }
 }

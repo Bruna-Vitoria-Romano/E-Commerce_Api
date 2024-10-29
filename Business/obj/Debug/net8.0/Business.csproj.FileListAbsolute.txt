@@ -1,13 +1,13 @@
+C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\bin\Debug\net8.0\Business.deps.json
+C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\bin\Debug\net8.0\Business.runtimeconfig.json
+C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\bin\Debug\net8.0\Business.dll
+C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\bin\Debug\net8.0\Business.pdb
 C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.csproj.AssemblyReference.cache
 C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
 C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
 C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
 C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.sourcelink.json
-C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\bin\Debug\net8.0\Business.deps.json
-C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\bin\Debug\net8.0\Business.runtimeconfig.json
-C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\bin\Debug\net8.0\Business.dll
-C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\bin\Debug\net8.0\Business.pdb
 C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.dll
 C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\refint\Business.dll
 C:\Users\Superframe Force\Desktop\Projects\E_Commerce_API\Business\obj\Debug\net8.0\Business.pdb

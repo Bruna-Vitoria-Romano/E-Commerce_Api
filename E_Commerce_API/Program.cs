@@ -1,9 +1,9 @@
-using Business.Entyties;
 using Data.Repository.Interfaces;
 using Data.Repositories;
 using Data.DataContext;
-using System.Configuration;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using Business.Core.AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,9 +14,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IGenericRepository<Base>, GenericRepository<Base>>();
-builder.Services.AddSingleton<IProductRepository, ProductRepository>();
-builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddDbContext<Context>(options =>
+{
+    options.UseSqlServer("DefaultConnection");
+
+    builder.Services.AddSingleton<IProductRepository, ProductRepository>();
+    builder.Services.AddSingleton<IUserRepository, UserRepository>();
+});
 
 var app = builder.Build();
 
